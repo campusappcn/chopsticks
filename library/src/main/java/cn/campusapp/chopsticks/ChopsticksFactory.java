@@ -8,21 +8,19 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import java.lang.reflect.InvocationTargetException;
-
 /**
- * Factory to get which builder should be used according to parent layout type
+ * Factory to get the builder should be used according to parent layout type
  *
  * Created by nius on 10/9/15.
  */
 @SuppressWarnings({"ConstantConditions", "unused"})
-class ChopsticksFactory {
+public class ChopsticksFactory {
 
     @NonNull
-    private final View view;
+    private final View mView;
 
     ChopsticksFactory(@NonNull View childView) {
-        this.view = childView;
+        this.mView = childView;
     }
 
     /**
@@ -32,7 +30,7 @@ class ChopsticksFactory {
      * @return helper to layout isInRelative layout
      */
     public RelativeLayoutStick isInRelative() {
-        return (RelativeLayoutStick) isInLayout(RelativeLayout.LayoutParams.class, false, 0, 0);
+        return (RelativeLayoutStick) isInLayout(RelativeLayout.LayoutParams.class, true, 0, 0);
     }
 
     /**
@@ -44,15 +42,15 @@ class ChopsticksFactory {
      * @return helper to layout isInRelative layout
      */
     public RelativeLayoutStick isInRelative(int width, int height){
-        return (RelativeLayoutStick) isInLayout(RelativeLayout.LayoutParams.class, true, width, height);
+        return (RelativeLayoutStick) isInLayout(RelativeLayout.LayoutParams.class, false, width, height);
     }
 
     public LinearLayoutStick isInLinear(){
-        return (LinearLayoutStick) isInLayout(LinearLayout.LayoutParams.class, false, 0, 0);
+        return (LinearLayoutStick) isInLayout(LinearLayout.LayoutParams.class, true, 0, 0);
     }
 
     public LinearLayoutStick isInLinear(int width, int height){
-        return (LinearLayoutStick) isInLayout(LinearLayout.LayoutParams.class, true, width, height);
+        return (LinearLayoutStick) isInLayout(LinearLayout.LayoutParams.class, false, width, height);
     }
 
     /**
@@ -65,17 +63,17 @@ class ChopsticksFactory {
      * @param <LP> the LayoutParam generic type
      * @return the corresponding builder stick
      */
-    <LP extends ViewGroup.LayoutParams> Chopstick isInLayout(Class<LP> layoutParamsType, boolean useExistingLayoutParams,
+    private <LP extends ViewGroup.LayoutParams> Chopstick isInLayout(Class<LP> layoutParamsType, boolean useExistingLayoutParams,
                                                              int width, int height){
         LP lp = useExistingLayoutParams
                 ? useExistingLayoutParams(layoutParamsType)
                 : useNewLayoutParams(layoutParamsType, width, height);
 
         if (RelativeLayout.LayoutParams.class.equals(layoutParamsType)) {
-            return new RelativeLayoutStick((RelativeLayout.LayoutParams) lp);
+            return new RelativeLayoutStick((RelativeLayout.LayoutParams) lp, mView);
         }
         else if(LinearLayout.LayoutParams.class.equals(layoutParamsType)){
-            return new LinearLayoutStick((LinearLayout.LayoutParams)lp, (LinearLayout) view);
+            return new LinearLayoutStick((LinearLayout.LayoutParams)lp, (LinearLayout) mView);
         }
 
         throw new UnsupportedOperationException("This Layout is not currently supported. A PR is welcome!");
@@ -83,20 +81,20 @@ class ChopsticksFactory {
 
     @Nullable
     private <LP extends ViewGroup.LayoutParams> LP useExistingLayoutParams(Class<LP> layoutParamsType) {
-        if (view == null) {
+        if (mView == null) {
             throw new IllegalArgumentException("View should not be null");
         }
 
         @SuppressWarnings("unchecked")
-        LP lp = (LP) view.getLayoutParams();
+        LP lp = (LP) mView.getLayoutParams();
 
         if (lp == null) {
             if (Chopstick.IS_DEBUG) {
-                throw new IllegalArgumentException("The view has no layout param, You should use isInRelative(View, width, height)");
+                throw new IllegalArgumentException("The view has no layout param, You should use isInRelative(width, height)");
             }
-            Log.e(Chopstick.TAG, "The view has no layout param, You should use isInRelative(View, width, height)");
+            Log.e(Chopstick.TAG, "The view has no layout param, You should use isInRelative(width, height)");
             try {
-                lp = layoutParamsType.getConstructor(Integer.class, Integer.class).newInstance(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                lp = layoutParamsType.getConstructor(Integer.TYPE, Integer.TYPE).newInstance(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             } catch (Exception e) {
                 throw new RuntimeException("instantiate layout param fail", e);
             }
@@ -106,16 +104,16 @@ class ChopsticksFactory {
 
     @SuppressWarnings("unchecked")
     public <LP extends ViewGroup.LayoutParams> LP useNewLayoutParams(Class<LP> layoutParamsType, int width, int height) {
-        if (view == null) {
+        if (mView == null) {
             throw new IllegalArgumentException("View should not be null");
         }
 
-        LP lp = (LP) view.getLayoutParams();
+        LP lp = (LP) mView.getLayoutParams();
         if (lp != null) {
             Log.w(Chopstick.TAG, "The view's original layout param will be replaced");
         }
         try {
-            lp = layoutParamsType.getConstructor(Integer.class, Integer.class).newInstance(width, height);
+            lp = layoutParamsType.getDeclaredConstructor(Integer.TYPE, Integer.TYPE).newInstance(width, height);
         } catch (Exception e){
             throw new RuntimeException("instantiate layout param fail", e);
         }

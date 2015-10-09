@@ -18,6 +18,7 @@ public class LinearLayoutStick extends MarginStick<LinearLayoutStick> {
     final private LinearLayout mLinearLayout;
 
     LinearLayoutStick(@NonNull LinearLayout.LayoutParams lp, @NonNull LinearLayout linearLayout) {
+        super(linearLayout);
         mLp = lp;
         mLinearLayout = linearLayout;
     }

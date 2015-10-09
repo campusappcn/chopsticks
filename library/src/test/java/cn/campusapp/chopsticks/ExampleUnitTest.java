@@ -1,4 +1,4 @@
-package cn.campusapp.chopsticks;
+package cn.campusapp.chopsticks.test;
 
 import org.junit.Test;
 

@@ -15,12 +15,25 @@ public abstract class Chopstick<T extends Chopstick<T>> {
 
     static boolean IS_DEBUG = false;
 
+    protected View mTargetView;
+
     public static void setDebug(boolean isDebug){
         IS_DEBUG = isDebug;
     }
 
-    public static ChopsticksFactory view(@NonNull View view){
+    public Chopstick(View targetView) {
+        mTargetView = targetView;
+    }
+
+    public static ChopsticksFactory chop(@NonNull View view){
         return new ChopsticksFactory(view);
+    }
+
+    /**
+     * set the configured layout params into the view
+     */
+    public void stick(){
+        mTargetView.setLayoutParams(lp());
     }
 
     /**

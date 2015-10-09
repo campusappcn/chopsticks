@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 /**
@@ -18,7 +19,8 @@ public class RelativeLayoutStick extends MarginStick<RelativeLayoutStick> {
     @NonNull
     final RelativeLayout.LayoutParams mLp;
 
-    RelativeLayoutStick(@NonNull RelativeLayout.LayoutParams lp) {
+    RelativeLayoutStick(@NonNull RelativeLayout.LayoutParams lp, View targetView) {
+        super(targetView);
         this.mLp = lp;
     }
 
@@ -44,12 +46,12 @@ public class RelativeLayoutStick extends MarginStick<RelativeLayoutStick> {
     }
 
     public RelativeLayoutStick alignLeft(@IdRes int id) {
-        lp().addRule(RelativeLayout.ALIGN_LEFT);
+        lp().addRule(RelativeLayout.ALIGN_LEFT, id);
         return this;
     }
 
     public RelativeLayoutStick alignRight(@IdRes int id) {
-        lp().addRule(RelativeLayout.ALIGN_RIGHT);
+        lp().addRule(RelativeLayout.ALIGN_RIGHT, id);
         return this;
     }
 

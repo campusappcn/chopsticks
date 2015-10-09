@@ -9,6 +9,8 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -21,10 +23,5 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:support-annotations:23.0.0'
-    androidTestCompile 'com.android.support.test:runner:0.3'
-    // Set this dependency to use JUnit 4 rules
-    androidTestCompile 'com.android.support.test:rules:0.3'
-    // Set this dependency to build and run Espresso tests
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
+    compile 'com.android.support:support-annotations:23.0.1'
 }

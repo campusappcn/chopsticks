@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/root_relative_view"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,10 +9,37 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context="cn.campusapp.chopsticks.test.TestActivity"
+    tools:ignore="HardcodedText">
 
     <TextView
-        android:text="Hello World!"
+        android:id="@+id/top_right"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="TOP RIGHT"
+        />
+
+
+    <TextView
+        android:id="@+id/center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CENTER"
+        />
+
+    <TextView
+        android:id="@+id/below_center_align_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BELOW CENTER ALIGN LEFT"
+        />
+
+    <TextView
+        android:id="@+id/center_left_align_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CENTER LEFT"
+        />
+
+
 </RelativeLayout>

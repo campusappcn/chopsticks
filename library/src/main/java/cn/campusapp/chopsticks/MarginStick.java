@@ -1,5 +1,6 @@
 package cn.campusapp.chopsticks;
 
+import android.view.View;
 import android.view.ViewGroup;
 
 /**
@@ -9,6 +10,10 @@ import android.view.ViewGroup;
  */
 @SuppressWarnings("unused")
 public abstract class MarginStick<T extends MarginStick<T>> extends Chopstick<T> {
+
+    public MarginStick(View targetView) {
+        super(targetView);
+    }
 
     @Override
     protected abstract ViewGroup.MarginLayoutParams lp();

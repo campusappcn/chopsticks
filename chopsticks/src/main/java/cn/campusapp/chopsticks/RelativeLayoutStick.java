@@ -1,33 +1,29 @@
 package cn.campusapp.chopsticks;
 
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.widget.RelativeLayout;
 
 /**
- * Layout helper for relative layout
+ * Layout helper for a view in relative layout
  * <p/>
  * Created by nius on 10/9/15.
  */
 @SuppressWarnings("unused")
-public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
+public class RelativeLayoutStick extends MarginStick<RelativeLayoutStick> {
 
     private static final int FALSE = 0;
     @NonNull
-    RelativeLayout.LayoutParams mLp;
-    @NonNull
-    Context mContext;
+    final RelativeLayout.LayoutParams mLp;
 
-    public RelativeLayoutChop(@NonNull RelativeLayout.LayoutParams lp, @NonNull Context context) {
+    RelativeLayoutStick(@NonNull RelativeLayout.LayoutParams lp) {
         this.mLp = lp;
-        mContext = context;
     }
 
     @Override
-    protected RelativeLayoutChop getThis() {
+    protected RelativeLayoutStick getThis() {
         return this;
     }
 
@@ -37,79 +33,79 @@ public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
         return mLp;
     }
 
-    public RelativeLayoutChop alignTop(@IdRes int id) {
+    public RelativeLayoutStick alignTop(@IdRes int id) {
         lp().addRule(RelativeLayout.ALIGN_TOP, id);
         return this;
     }
 
-    public RelativeLayoutChop alignBottom(@IdRes int id) {
+    public RelativeLayoutStick alignBottom(@IdRes int id) {
         lp().addRule(RelativeLayout.ALIGN_BOTTOM, id);
         return this;
     }
 
-    public RelativeLayoutChop alignLeft(@IdRes int id) {
+    public RelativeLayoutStick alignLeft(@IdRes int id) {
         lp().addRule(RelativeLayout.ALIGN_LEFT);
         return this;
     }
 
-    public RelativeLayoutChop alignRight(@IdRes int id) {
+    public RelativeLayoutStick alignRight(@IdRes int id) {
         lp().addRule(RelativeLayout.ALIGN_RIGHT);
         return this;
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public RelativeLayoutChop alignEnd(@IdRes int id) {
+    public RelativeLayoutStick alignEnd(@IdRes int id) {
         lp().addRule(RelativeLayout.ALIGN_END, id);
         return this;
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public RelativeLayoutChop alignStart(@IdRes int id) {
+    public RelativeLayoutStick alignStart(@IdRes int id) {
         lp().addRule(RelativeLayout.ALIGN_START, id);
         return this;
     }
 
-    public RelativeLayoutChop alignBaseLine(@IdRes int id) {
+    public RelativeLayoutStick alignBaseLine(@IdRes int id) {
         lp().addRule(RelativeLayout.ALIGN_BASELINE, id);
         return this;
     }
 
 
-    public RelativeLayoutChop toRightOf(@IdRes int id) {
+    public RelativeLayoutStick toRightOf(@IdRes int id) {
         lp().addRule(RelativeLayout.RIGHT_OF, id);
         return this;
     }
 
-    public RelativeLayoutChop toLeftOf(@IdRes int id) {
+    public RelativeLayoutStick toLeftOf(@IdRes int id) {
         lp().addRule(RelativeLayout.LEFT_OF, id);
         return this;
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public RelativeLayoutChop toStartOf(@IdRes int id) {
+    public RelativeLayoutStick toStartOf(@IdRes int id) {
         lp().addRule(RelativeLayout.START_OF, id);
         return this;
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public RelativeLayoutChop toEndOf(@IdRes int id) {
+    public RelativeLayoutStick toEndOf(@IdRes int id) {
         lp().addRule(RelativeLayout.END_OF, id);
         return this;
     }
 
 
-    public RelativeLayoutChop above(@IdRes int id) {
+    public RelativeLayoutStick above(@IdRes int id) {
         lp().addRule(RelativeLayout.ABOVE, id);
         return this;
     }
 
-    public RelativeLayoutChop below(@IdRes int id) {
+    public RelativeLayoutStick below(@IdRes int id) {
         lp().addRule(RelativeLayout.BELOW, id);
         return this;
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public RelativeLayoutChop alignParentStart(boolean b) {
+    public RelativeLayoutStick alignParentStart(boolean b) {
         if (b) {
             lp().addRule(RelativeLayout.ALIGN_PARENT_START);
         } else {
@@ -119,11 +115,11 @@ public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public RelativeLayoutChop alignParentStart() {
+    public RelativeLayoutStick alignParentStart() {
         return alignParentStart(true);
     }
 
-    public RelativeLayoutChop alignParentLeft(boolean b) {
+    public RelativeLayoutStick alignParentLeft(boolean b) {
         if (b) {
             lp().addRule(RelativeLayout.ALIGN_PARENT_LEFT);
         } else {
@@ -132,12 +128,12 @@ public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
         return this;
     }
 
-    public RelativeLayoutChop alignParentLeft() {
+    public RelativeLayoutStick alignParentLeft() {
         return alignParentLeft(true);
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public RelativeLayoutChop alignParentEnd(boolean b) {
+    public RelativeLayoutStick alignParentEnd(boolean b) {
         if (b) {
             lp().addRule(RelativeLayout.ALIGN_PARENT_END);
         } else {
@@ -147,11 +143,11 @@ public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public RelativeLayoutChop alignParentEnd() {
+    public RelativeLayoutStick alignParentEnd() {
         return alignParentEnd(true);
     }
 
-    public RelativeLayoutChop alignParentRight(boolean b) {
+    public RelativeLayoutStick alignParentRight(boolean b) {
         if (b) {
             lp().addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         } else {
@@ -160,11 +156,11 @@ public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
         return this;
     }
 
-    public RelativeLayoutChop alignParentRight() {
+    public RelativeLayoutStick alignParentRight() {
         return alignParentRight(true);
     }
 
-    public RelativeLayoutChop alignParentTop(boolean b) {
+    public RelativeLayoutStick alignParentTop(boolean b) {
         if (b) {
             lp().addRule(RelativeLayout.ALIGN_PARENT_TOP);
         } else {
@@ -173,11 +169,11 @@ public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
         return this;
     }
 
-    public RelativeLayoutChop alignParentTop() {
+    public RelativeLayoutStick alignParentTop() {
         return alignParentTop(true);
     }
 
-    public RelativeLayoutChop alignParentBottom(boolean b) {
+    public RelativeLayoutStick alignParentBottom(boolean b) {
         if (b) {
             lp().addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         } else {
@@ -186,11 +182,11 @@ public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
         return this;
     }
 
-    public RelativeLayoutChop alignParentBottom() {
+    public RelativeLayoutStick alignParentBottom() {
         return alignParentBottom(true);
     }
 
-    public RelativeLayoutChop centerInParent(boolean b) {
+    public RelativeLayoutStick centerInParent(boolean b) {
         if (b) {
             lp().addRule(RelativeLayout.CENTER_IN_PARENT);
         } else {
@@ -199,11 +195,11 @@ public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
         return this;
     }
 
-    public RelativeLayoutChop centerInParent() {
+    public RelativeLayoutStick centerInParent() {
         return centerInParent(true);
     }
 
-    public RelativeLayoutChop centerVertical(boolean b) {
+    public RelativeLayoutStick centerVertical(boolean b) {
         if (b) {
             lp().addRule(RelativeLayout.CENTER_VERTICAL);
         } else {
@@ -212,7 +208,7 @@ public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
         return this;
     }
 
-    public RelativeLayoutChop centerHorizontal(boolean b) {
+    public RelativeLayoutStick centerHorizontal(boolean b) {
         if (b) {
             lp().addRule(RelativeLayout.CENTER_HORIZONTAL);
         } else {
@@ -221,7 +217,7 @@ public class RelativeLayoutChop extends MarginChop<RelativeLayoutChop> {
         return this;
     }
 
-    public RelativeLayoutChop centerHorizontal() {
+    public RelativeLayoutStick centerHorizontal() {
         return centerHorizontal(true);
     }
 

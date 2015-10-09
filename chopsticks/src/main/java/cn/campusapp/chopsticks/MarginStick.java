@@ -7,7 +7,8 @@ import android.view.ViewGroup;
  *
  * Created by nius on 10/9/15.
  */
-public abstract class MarginChop<T extends MarginChop<T>> extends Chop<T> {
+@SuppressWarnings("unused")
+public abstract class MarginStick<T extends MarginStick<T>> extends Chopstick<T> {
 
     @Override
     protected abstract ViewGroup.MarginLayoutParams lp();

@@ -1,4 +1,5 @@
-# chopsticks
+# chopsticks [![Release](https://img.shields.io/github/tag/campusappcn/chopsticks.svg?label=JitPack)](https://jitpack.io/#campusappcn/chopsticks/0.9)
+
 the missing android layouter.
 
 It is sometimes a pain to layout your views programmatically using Java codes. The Java API cannot be used as the same way as XML. 
@@ -30,6 +31,19 @@ You can use static imports to make your codes more elegant.
 
 Currently support RelativeLayout and LinearLayout. More Layouts will be supported.
 
+Add dependencies from jitpack.io
+
+```groovy
+
+   repositories { 
+        jcenter()
+        maven { url 'https://jitpack.io' }
+   }
+   
+   dependencies {
+         compile 'com.github.campusappcn:chopsticks:0.9'
+   }
+```
 
 
 <br/>

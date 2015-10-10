@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 
 /**
  * Layout helper for a view in relative layout
- * <p/>
+ * <p>
  * Created by nius on 10/9/15.
  */
 @SuppressWarnings("unused")

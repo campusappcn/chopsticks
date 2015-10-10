@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 
 /**
  * layout helper for a view in linear layout
- * <p/>
+ * <p>
  * Created by nius on 10/9/15.
  */
 @SuppressWarnings("unused")
@@ -55,22 +55,22 @@ public class LinearLayoutStick extends MarginStick<LinearLayoutStick> {
 //    }
 
     /**
-     * @param gravities can be one or more in: <br/>
-     *                  {@link android.view.Gravity#TOP}<br/>
-     *                  {@link android.view.Gravity#BOTTOM}<br/>
-     *                  {@link android.view.Gravity#CENTER}<br/>
-     *                  {@link android.view.Gravity#CENTER_VERTICAL}<br/>
-     *                  {@link android.view.Gravity#CENTER_HORIZONTAL}<br/>
-     *                  {@link android.view.Gravity#LEFT}<br/>
-     *                  {@link android.view.Gravity#RIGHT}<br/>
-     *                  {@link android.view.Gravity#START}<br/>
-     *                  {@link android.view.Gravity#END}<br/>
-     *                  {@link android.view.Gravity#FILL}<br/>
-     *                  {@link android.view.Gravity#FILL_HORIZONTAL}<br/>
-     *                  {@link android.view.Gravity#FILL_VERTICAL}<br/>
-     *                  {@link android.view.Gravity#CLIP_HORIZONTAL}<br/>
-     *                  {@link android.view.Gravity#CLIP_VERTICAL}<br/>
-     *                  {@link android.view.Gravity#NO_GRAVITY}<br/>
+     * @param gravities can be one or more in: <br>
+     *                  {@link android.view.Gravity#TOP}<br>
+     *                  {@link android.view.Gravity#BOTTOM}<br>
+     *                  {@link android.view.Gravity#CENTER}<br>
+     *                  {@link android.view.Gravity#CENTER_VERTICAL}<br>
+     *                  {@link android.view.Gravity#CENTER_HORIZONTAL}<br>
+     *                  {@link android.view.Gravity#LEFT}<br>
+     *                  {@link android.view.Gravity#RIGHT}<br>
+     *                  {@link android.view.Gravity#START}<br>
+     *                  {@link android.view.Gravity#END}<br>
+     *                  {@link android.view.Gravity#FILL}<br>
+     *                  {@link android.view.Gravity#FILL_HORIZONTAL}<br>
+     *                  {@link android.view.Gravity#FILL_VERTICAL}<br>
+     *                  {@link android.view.Gravity#CLIP_HORIZONTAL}<br>
+     *                  {@link android.view.Gravity#CLIP_VERTICAL}<br>
+     *                  {@link android.view.Gravity#NO_GRAVITY}<br>
      * @return this
      * @see <a href="http://developer.android.com/reference/android/widget/LinearLayout.html#attr_android:gravity">android:gravity</a>
      */

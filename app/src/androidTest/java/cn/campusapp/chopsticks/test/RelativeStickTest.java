@@ -20,7 +20,7 @@ import cn.campusapp.chopsticks.test.R;
 
 /**
  * test for chopstick
- * <p/>
+ * <p>
  * Created by nius on 10/9/15.
  */
 @SuppressLint("NewApi")

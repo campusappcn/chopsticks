@@ -33,24 +33,26 @@ public class LinearLayoutStick extends MarginStick<LinearLayoutStick> {
         return this;
     }
 
-    public LinearLayoutStick orientVertical() {
-        mLinearLayout.setOrientation(LinearLayout.VERTICAL);
-        return this;
-    }
 
-    public LinearLayoutStick orientHorizontal() {
-        mLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
-        return this;
-    }
-
-    /**
-     * @param orientation {@link LinearLayout#HORIZONTAL } or {@link LinearLayout#VERTICAL}
-     * @return this
-     */
-    public LinearLayoutStick orientation(int orientation) {
-        mLinearLayout.setOrientation(orientation);
-        return this;
-    }
+//  TODO these APIs are for the parent views. the layoutStick is for the children.
+//    public LinearLayoutStick orientVertical() {
+//        mLinearLayout.setOrientation(LinearLayout.VERTICAL);
+//        return this;
+//    }
+//
+//    public LinearLayoutStick orientHorizontal() {
+//        mLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
+//        return this;
+//    }
+//
+//    /**
+//     * @param orientation {@link LinearLayout#HORIZONTAL } or {@link LinearLayout#VERTICAL}
+//     * @return this
+//     */
+//    public LinearLayoutStick orientation(int orientation) {
+//        mLinearLayout.setOrientation(orientation);
+//        return this;
+//    }
 
     /**
      * @param gravities can be one or more in: <br/>

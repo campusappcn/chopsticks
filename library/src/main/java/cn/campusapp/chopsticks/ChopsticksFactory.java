@@ -73,7 +73,7 @@ public class ChopsticksFactory {
             return new RelativeLayoutStick((RelativeLayout.LayoutParams) lp, mView);
         }
         else if(LinearLayout.LayoutParams.class.equals(layoutParamsType)){
-            return new LinearLayoutStick((LinearLayout.LayoutParams)lp, (LinearLayout) mView);
+            return new LinearLayoutStick((LinearLayout.LayoutParams)lp, mView);
         }
 
         throw new UnsupportedOperationException("This Layout is not currently supported. A PR is welcome!");

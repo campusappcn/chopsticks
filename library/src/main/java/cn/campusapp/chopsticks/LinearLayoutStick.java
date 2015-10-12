@@ -1,6 +1,7 @@
 package cn.campusapp.chopsticks;
 
 import android.support.annotation.NonNull;
+import android.view.View;
 import android.widget.LinearLayout;
 
 /**
@@ -14,13 +15,9 @@ public class LinearLayoutStick extends MarginStick<LinearLayoutStick> {
     @NonNull
     final private LinearLayout.LayoutParams mLp;
 
-    @NonNull
-    final private LinearLayout mLinearLayout;
-
-    LinearLayoutStick(@NonNull LinearLayout.LayoutParams lp, @NonNull LinearLayout linearLayout) {
-        super(linearLayout);
+    LinearLayoutStick(@NonNull LinearLayout.LayoutParams lp, View targetView) {
+        super(targetView);
         mLp = lp;
-        mLinearLayout = linearLayout;
     }
 
     @Override

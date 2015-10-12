@@ -41,7 +41,7 @@ Add dependencies from jitpack.io
    }
    
    dependencies {
-         compile 'com.github.campusappcn:chopsticks:0.9'
+         compile 'com.github.campusappcn:chopsticks:0.9.1'
    }
 ```
 

@@ -1,4 +1,6 @@
-# chopsticks [![Release](https://img.shields.io/github/tag/campusappcn/chopsticks.svg?label=JitPack)](https://jitpack.io/#campusappcn/chopsticks/0.9)
+# chopsticks 
+
+[![Release](https://img.shields.io/github/tag/campusappcn/chopsticks.svg?label=JitPack)](https://jitpack.io/#campusappcn/chopsticks)
 
 the missing android layouter.
 
